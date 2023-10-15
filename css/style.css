@@ -1,0 +1,491 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* Reset some default styles for better consistency */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+}
+
+
+.flags {
+  display: flex;
+  align-items: center;
+}
+
+.flag {
+  width: 35px;
+  height: 35px;
+  margin-left: 10px; /* Adjust the margin as needed */
+}
+
+
+/* HEADER */
+/* CSS for the header */
+header {
+  background-color: white;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 10px 20px; 
+}
+
+/* CSS for the logo */
+.logo img {
+  max-width: 200px; 
+  height: auto; 
+  transition: transform 0.3s;
+  margin-right: 20px;
+}
+
+.logo:hover img {
+  transform: scale(1.1); 
+}
+
+/* CSS for the navigation links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-right: 2rem; 
+
+}
+
+.nav-links a {
+  font-family: raleway, sans-serif;
+  font-weight: lighter;
+  text-decoration: none;
+  color: black; 
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: darkgrey; 
+}
+
+/* Media Query for Mobile Devices */
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column; /* Stack the logo and navigation links vertically */
+    text-align: center;
+  }
+
+  .logo img {
+    margin-right: 0; /* Remove right margin for the logo */
+  }
+
+  .nav-links {
+    margin-top: 20px;
+  }
+
+  .nav-links li {
+    margin-right: 1rem;
+    margin-bottom: 10px; /* Add spacing between list items vertically */
+  }
+}
+
+/* END OF HEADER*/
+
+/*  WELCOME-SECTION */
+
+.Welcome-section {
+  position: relative; /* Create a positioning context for absolute positioning */
+  height: 700px; /* Set the desired section height */
+  overflow: hidden; /* Hide any image overflow */
+}
+
+/* Style the image within the section */
+.Welcome-section img {
+  position: absolute; /* Position the image absolutely within the section */
+  top: 0;
+  left: 0;
+  width: 100%; /* Make the image cover the whole section width */
+  height: 100%; /* Make the image cover the whole section height */
+  object-fit: cover; /* Maintain image aspect ratio while covering the section */
+  z-index: 0; /* Place the image below other elements */
+}
+
+/* Style the gradient overlay */
+.Welcome-section::before {
+  content: ""; /* Create a pseudo-element */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45%; /* Set the width to cover 40% of the image */
+  height: 100%; /* Make the square cover the whole section height */
+  background: rgba(0, 48, 91, 0.5); /* Transparent blue color with an alpha value */
+  z-index: 1; /* Place the overlay above the image */
+}
+
+
+/* Style the Welcome text */
+.Welcome-text {
+  position: absolute; /* Position the text absolutely within the section */
+  top: 50%; /* Center vertically */
+  left: 10%; /* Adjust the left positioning as needed */
+  transform: translate(0, -50%); /* Center vertically */
+  font-size: large;
+  z-index: 2; /* Place the text above the gradient */
+}
+
+/* Style the heading */
+.Welcome-text h2 {
+  font-family: "Times New Roman", Times, serif;
+  color: rgba(255, 255, 255);
+  font-size: 24px; /* Set the desired font size */
+  margin: 0; /* Remove default margin for h2 */
+  font-size: 66px;
+  font-stretch: 100%;
+  font-style: normal;
+  font-weight: 400;
+  height: 66px;
+  letter-spacing: -1.6px;
+  line-height: 66px;
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: none;
+}
+
+.Welcome-text p {
+  color: rgba(255, 255, 255);
+  margin: 0;
+}
+
+
+@media screen and (max-width: 768px) {
+  .Welcome-text h2{
+    margin-bottom: 5rem;
+  }
+  .Welcome-text p{
+    color: black;
+    font-size: 20px;
+  }
+}
+/* -->  END OF WELCOME-SECTION  <-- */
+
+
+/* BEGINING OF THE SERVICES SECTION */
+
+.Custom-section {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px;
+}
+
+.blue-square {
+  content: ""; /* Create a pseudo-element */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45%; /* Set the width to cover 40% of the section */
+  height: 100%; /* Make the square cover the whole section height */
+  background:  rgba(0, 48, 91, 0.5);  /* Transparent blue color with an alpha value */
+  z-index: 1; /* Place the overlay above the content */
+}
+
+.title h3 {
+  font-size: 35px;
+  font-weight: bold;
+  font-family: "raleway", sans-serif;
+}
+
+.title h2 {
+  font-size: 35px;
+  font-weight: lighter;
+  font-family: "raleway", sans-serif;
+}
+
+.paragraphs {
+  width: 55%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.paragraph {
+  padding: 10px;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.paragraph h3 {
+  font-size: 19px;
+  color: rgb(0, 48, 91);
+  font-family: open sans, sans-serif;
+  font-style: normal;
+  font-weight: lighter;
+  margin-bottom: 1.5rem;
+}
+
+.paragraph h3::before {
+  content: "\25A0";
+  margin-right: 0.5rem; 
+  font-size: 25px;
+  color: rgb(0, 48, 91);
+  display: inline-block;
+}
+
+.paragraph p {
+  font-size: 14px;
+  color: rgb(0, 48, 91);
+  font-family: open sans, sans-serif;
+  font-style: normal;
+  font-weight: lighter;
+  text-align: left;
+}
+
+
+/* Media Query for Mobile Devices */
+@media screen and (max-width: 768px) {
+  .Custom-section {
+    position: relative;
+    padding: 40px 20px; /* Reduce padding for mobile devices */
+    text-align: center; /* Center the content on mobile devices */
+  }
+  
+  .blue-square {
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  .title h3,
+  .title h2 {
+    display: none;
+  }
+  
+  .paragraphs {
+    width: 100%;
+    display: block;
+  }
+  
+  .paragraph {
+    padding: 20px 0;
+    margin-bottom: 1rem;
+  }
+  
+  .paragraph h3 {
+    font-size: 18px;
+  }
+  
+  .paragraph h3::before {
+  }
+  
+  .paragraph p {
+    font-size: 16px;
+    color: rgb(0, 48, 91);
+  }
+  
+}
+
+
+/* END OF THE SERVICES SECTION */
+
+
+/* BEGINING OF OUR VISION SECTION  */
+
+.our-vision {
+  background-color: rgb(0, 48, 91);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 70px;
+  text-align: left;
+}
+
+h1 {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 400;
+  font-weight: lighter;
+  margin-bottom: 70px;
+  font-family: "raleway", sans-serif;
+  font-family: "times new roman", times, serif;
+}
+
+p {
+  font-size: 20px;
+  font-family: "open sans", sans-serif;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  font-style: normal;
+  font-weight: 400;
+  font-weight: lighter;
+  height: auto;
+  letter-spacing: normal;
+  font-feature-settings: normal;
+}
+
+@media screen and (max-width: 780px) {
+  
+  .content p {
+    font-size: 18px; 
+    line-height: 2;
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+}
+/* END OF OUR VISION SECTION */
+
+/* BEGINING OF OUR PARTNERS SECITON */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #EFEFEF;
+} */
+.slide-container{
+  max-width: 1120px;
+  width: 100%;
+  padding: 40px 0;
+}
+.slide-content{
+  margin: 0 40px;
+  overflow: hidden;
+  border-radius: 25px;
+}
+.card{
+  border-radius: 25px;
+  background-color: #FFF;
+}
+.image-content,
+.card-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 14px;
+}
+.card-content p{
+  margin-top: 4px;
+}
+.image-content{
+  position: relative;
+  row-gap: 5px;
+  padding: 50px 0;
+}
+.overlay{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #4070F4;
+  border-radius: 25px 25px 0 25px;
+}
+.overlay::before,
+.overlay::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  height: 40px;
+  width: 40px;
+  background-color: #4070F4;
+}
+.overlay::after{
+  border-radius: 0 25px 0 0;
+  background-color: #FFF;
+}
+.card-image{
+  position: relative;
+  height: 150px;
+  width: 150px;
+}
+.card-image .card-img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover; 
+  border: 4px solid #4070F4;
+}
+.name{
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+}
+.description{
+  font-size: 14px;
+  color: #707070;
+  text-align: center;
+}
+.button{
+  border: none;
+  font-size: 16px;
+  color: #FFF;
+  padding: 8px 16px;
+  background-color: #4070F4;
+  border-radius: 6px;
+  margin: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.button:hover{
+  background: #265DF2;
+}
+
+.swiper-navBtn{
+  color: #6E93f7;
+  transition: color 0.3s ease;
+}
+.swiper-navBtn:hover{
+  color: #4070F4;
+}
+.swiper-navBtn::before,
+.swiper-navBtn::after{
+  font-size: 35px;
+}
+.swiper-button-next{
+  right: 0;
+}
+.swiper-button-prev{
+  left: 0;
+}
+.swiper-pagination-bullet{
+  background-color: #6E93f7;
+  opacity: 1;
+}
+.swiper-pagination-bullet-active{
+  background-color: #4070F4;
+}
+
+@media screen and (max-width: 768px) {
+  .slide-content{
+    margin: 0 10px;
+  }
+  .swiper-navBtn{
+    display: none;
+  }
+}
